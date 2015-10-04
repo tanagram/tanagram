@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+  <title>Tanagram</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:100,400,900' rel='stylesheet' type='text/css'>
+
+  <style type='text/css'>
+    html {
+      height: 100%;
+    }
+    body {
+      /* IE10+ */ 
+      background-image: -ms-radial-gradient(center bottom, ellipse farthest-side, #4326FF 0%, #4326FF 20%, #000000 100%);
+
+      /* Mozilla Firefox */ 
+      background-image: -moz-radial-gradient(center bottom, ellipse farthest-side, #4326FF 0%, #4326FF 20%, #000000 100%);
+
+      /* Opera */ 
+      background-image: -o-radial-gradient(center bottom, ellipse farthest-side, #4326FF 0%, #4326FF 20%, #000000 100%);
+
+      /* Webkit (Safari/Chrome 10) */ 
+      background-image: -webkit-gradient(radial, center bottom, 0, center bottom, 250, color-stop(0, #4326FF), color-stop(20, #4326FF), color-stop(100, #000000));
+
+      /* Webkit (Chrome 11+) */ 
+      background-image: -webkit-radial-gradient(center bottom, ellipse farthest-side, #4326FF 0%, #4326FF 20%, #000000 100%);
+
+      /* W3C Markup */ 
+      background-image: radial-gradient(ellipse farthest-side at center bottom, #4326FF 0%, #4326FF 20%, #000000 100%);
+
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: white;
+      font-family: 'Lato', sans-serif;
+      height: 100%;
+      margin: 0;
+    }
+    .Name {
+      font-size: 5em;
+      font-weight: 100;
+      margin-bottom: 2rem;
+      margin-top: 12rem;
+      opacity: 0;
+      text-align: center;
+      transform: rotateX(20deg) scaleY(0.8);
+      transform-origin: bottom center;
+      transition: opacity 3s, transform 3s;
+    }
+    .Name.Active {
+      opacity: 1;
+      transform: rotateX(0deg) scaleY(1);
+    }
+    #tagline {
+      opacity: 0;
+      text-align: center;
+      transition: opacity 3s;
+    }
+    #tagline.Active {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class='Name' id='hero'>Tanagram</h1>
+  <p id='tagline'>A web framework for the future.</p>
+  <script>
+    setTimeout(function() {
+      document.getElementById('hero').className += ' Active';
+      document.getElementById('tagline').className += ' Active';
+    }, 100);
+  </script>
+</body>
